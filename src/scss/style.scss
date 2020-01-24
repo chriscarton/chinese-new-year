@@ -135,6 +135,8 @@ svg{
 	}
 	
 }
+/*
+//Ouais ça va me prendre mille ans. 
 .bottom{
     position:absolute;
 	max-width:100px;
@@ -175,4 +177,11 @@ svg{
 		left:400px;
 		z-index:1;
 	}
+}
+*/
+
+#Lines{
+	position:absolute;
+	bottom:0px;
+	transform:translateY(50%);
 }

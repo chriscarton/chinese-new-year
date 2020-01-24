@@ -51,9 +51,12 @@
 		
 	</div>
 
-	<?php 
-	echo createMultipleSvgElements(15,'bottom');
-	?>
+	<div id="Lines">
+
+		<?php 
+		echo createSvgElement('line-5');
+		?>
+	</div>
 		
 
 		
