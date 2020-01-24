@@ -1,0 +1,178 @@
+@import 'mixins.scss';
+@import 'animations.scss';
+@import 'circles.scss';
+@import 'variables.scss';
+
+body{
+	background-color:#b30003;
+	margin:0px;
+	display:flex;
+	justify-content: center;
+	overflow:hidden;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-size: 1rem;
+	margin:0px;
+}
+
+svg{
+	display:block;
+}
+
+
+/*
+#bottomLines{
+	background-color:yellow;
+	position:absolute;
+	bottom:0px;
+}
+
+.bottom-line{
+	display:flex;
+	border:5px solid white;
+	&.number-0{
+		
+	}
+	&.number-1{
+		//transform:translateY(-50%);
+	}
+	&.number-2{
+		//transform:translateY(-100%);
+	}
+}
+*/
+
+
+.lanterne{
+	max-width: 100px;
+	position:absolute;
+	top:0px;
+	right:50%;
+	z-index:2;
+	transform-origin:center center;
+	transform:translate(50%, -80px);
+	@media screen and(min-width:$tablet){
+		max-width: 150px;
+		right:15%;
+	}
+	&.laterne-2{
+		display:none;
+		@media screen and(min-width:$tablet){
+			display:block;
+			top:35px;
+			right:0%;
+			z-index:1;
+			transform:translate(50%, -75px) scale(0.8);
+		}
+		svg{
+			animation-delay:1s;
+		}
+	}
+	svg{
+		@include dropShadow();
+		animation-name:upAndDown;
+		animation-duration:1s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate-reverse;
+		animation-timing-function: ease-in-out;
+
+	}
+}
+
+#Page{
+	padding:10px;
+	@media screen and(min-width:$tablet){
+		padding:0px;
+		max-width: $tablet;
+	}
+	position:relative;
+	flex-direction: column;
+	height:100vh;
+	border:1px dashed black;
+	@include flexCenter();
+
+	.container{
+
+		@include flexCenter();
+		
+		max-width:75vh;
+
+		position:relative;
+		.motif-central{
+			> svg{
+				animation-name:rotateSweat;
+				animation-iteration-count: infinite;
+				animation-duration: 40s;
+				animation-timing-function: linear;
+				transform-origin: center center;
+			}
+		}
+		@import 'elements.scss';
+	}
+	#Text{
+		text-align: center;
+		margin-top:15px;
+		h1{
+			display:inline-block;
+			font-size: 1.2rem;
+			font-family: 'Shojumaru';
+			border:10px double $golden;
+			color:$golden;
+			padding-right:10px;
+			padding-left:10px;
+			animation-name:bizzareBlink;
+			animation-duration:10s;
+			animation-iteration-count:infinite;
+		}
+		a{
+			margin-top:10px;
+			display:block;
+			color:$golden;
+			
+		}
+	
+	}
+	
+}
+.bottom{
+    position:absolute;
+	max-width:100px;
+	bottom:0px;
+	transform:translate(0%,50%);
+	&.bottom-1{
+		left:-50px;
+	}
+	&.bottom-2{
+		left:0px;
+		z-index:1;
+	}
+	&.bottom-3{
+		left:50px;
+	}
+	&.bottom-4{
+		left:100px;
+		z-index:1;
+	}
+	&.bottom-5{
+		left:150px;
+	}
+	&.bottom-6{
+		left:200px;
+		z-index:1;
+	}
+	&.bottom-7{
+		left:250px;
+	}
+	&.bottom-8{
+		left:300px;
+		z-index:1;
+	}
+	&.bottom-9{
+		left:350px;
+	}
+	&.bottom-10{
+		left:400px;
+		z-index:1;
+	}
+}
